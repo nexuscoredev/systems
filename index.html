@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NEXVISI – Innovate Without Limits</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --purple: #7B3FE4;
+    --purple-light: #9B6BFF;
+    --purple-glow: rgba(123, 63, 228, 0.45);
+    --pink: #E040B0;
+    --pink-glow: rgba(224, 64, 176, 0.3);
+    --bg-dark: #0D0A1A;
+    --bg-card: rgba(255,255,255,0.05);
+    --border-glass: rgba(255,255,255,0.10);
+    --text-white: #FFFFFF;
+    --text-muted: rgba(255,255,255,0.65);
+    --text-dim: rgba(255,255,255,0.40);
+    --font-heading: 'Syne', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  html, body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg-dark);
+    color: var(--text-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  /* ── BACKGROUND SCENE ── */
+  .scene {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 55% at 68% 55%, rgba(90,30,180,0.55) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 70%, rgba(180,30,100,0.35) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 80% 20%, rgba(60,10,140,0.40) 0%, transparent 70%),
+      linear-gradient(160deg, #0A0714 0%, #110920 40%, #0D0A1A 100%);
+  }
+
+  /* Horizontal neon lines */
+  .scene::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 58px,
+        rgba(120,60,220,0.04) 58px,
+        rgba(120,60,220,0.04) 59px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 120px,
+        rgba(200,60,160,0.03) 120px,
+        rgba(200,60,160,0.03) 121px
+      );
+  }
+
+  /* Neon floor glow at bottom */
+  .scene::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top, rgba(200,50,180,0.18) 0%, transparent 100%);
+  }
+
+  /* ── ROBOT SILHOUETTE (CSS) ── */
+  .robot-wrap {
+    position: fixed;
+    right: -20px;
+    bottom: 0;
+    width: 54%;
+    max-width: 680px;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    pointer-events: none;
+    /* subtle purple edge glow */
+    filter: drop-shadow(-60px 0 80px rgba(123,63,228,0.45));
+  }
+
+  .robot-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    opacity: 0.88;
+    mix-blend-mode: lighten;
+  }
+
+  /* Fallback gradient robot silhouette if no image */
+  .robot-fallback {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 90%;
+    background:
+      radial-gradient(ellipse 45% 30% at 50% 25%, rgba(180,120,255,0.4) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 80% at 50% 60%, rgba(100,40,200,0.25) 0%, transparent 80%);
+    border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+  }
+
+  /* ── LEFT PANEL GLOW ── */
+  .left-glow {
+    position: fixed;
+    left: 60px;
+    top: 30%;
+    width: 160px;
+    height: 280px;
+    border: 1px solid rgba(100,50,200,0.3);
+    border-radius: 12px;
+    background: rgba(40,15,100,0.25);
+    backdrop-filter: blur(6px);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .left-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 40%, rgba(180,40,200,0.3) 0%, transparent 70%);
+    border-radius: 12px;
+  }
+
+  .left-glow-inner {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(160,40,200,0.8) 0%, rgba(80,10,140,0.6) 60%, transparent 100%);
+    box-shadow: 0 0 30px rgba(160,40,200,0.5);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── LAYOUT ── */
+  .page {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 60px;
+    animation: fadeDown 0.7s ease both;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .nav-link {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .nav-link:hover { color: var(--text-white); }
+
+  .nav-link .arrow {
+    font-size: 13px;
+    opacity: 0.7;
+  }
+
+  .logo {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--text-white);
+    text-transform: uppercase;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-white);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 30px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .lang-btn:hover { background: rgba(255,255,255,0.13); }
+
+  .lang-btn .chevron { font-size: 11px; opacity: 0.7; }
+
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-white);
+    background: linear-gradient(135deg, #7B3FE4 0%, #5A1FBB 100%);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(123,63,228,0.4);
+    text-decoration: none;
+  }
+
+  .contact-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 32px rgba(123,63,228,0.6);
+  }
+
+  .contact-btn .icon {
+    width: 18px;
+    height: 18px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px 60px;
+    max-width: 700px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  /* Tags row */
+  .tags {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+
+  .tag {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.80);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 5px 14px;
+    backdrop-filter: blur(4px);
+    white-space: nowrap;
+  }
+
+  /* Headline */
+  .headline {
+    font-family: var(--font-heading);
+    font-size: clamp(52px, 7vw, 88px);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--text-white);
+    margin-bottom: 36px;
+    animation: fadeUp 0.7s 0.35s ease both;
+  }
+
+  /* CTA row */
+  .cta-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 52px;
+    animation: fadeUp 0.7s 0.45s ease both;
+  }
+
+  .btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-white);
+    background: linear-gradient(135deg, #7B3FE4 0%, #5520C8 100%);
+    border: none;
+    border-radius: 40px;
+    padding: 14px 28px;
+    cursor: pointer;
+    box-shadow: 0 6px 28px rgba(123,63,228,0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 36px rgba(123,63,228,0.7);
+  }
+
+  .btn-primary .arrow-icon {
+    font-size: 14px;
+    transform: rotate(-45deg);
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  .btn-primary:hover .arrow-icon { transform: rotate(-45deg) translate(2px,-2px); }
+
+  .btn-play {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-play:hover { background: rgba(255,255,255,0.18); transform: scale(1.07); }
+
+  .play-triangle {
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 12px solid rgba(255,255,255,0.85);
+    margin-left: 3px;
+  }
+
+  /* Stats row */
+  .stats-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    animation: fadeUp 0.7s 0.55s ease both;
+  }
+
+  .stat {
+    padding-right: 36px;
+  }
+
+  .stat + .stat {
+    padding-left: 36px;
+    border-left: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-white);
+    line-height: 1.1;
+  }
+
+  .stat-label {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  /* Brand's digital identity block */
+  .brand-block {
+    padding-left: 36px;
+    border-left: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .brand-title {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-white);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .brand-explore {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-white);
+    cursor: pointer;
+    transition: gap 0.2s;
+  }
+
+  .brand-explore:hover { gap: 12px; }
+
+  .explore-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  /* ── PROFIT CARD (top-right of hero) ── */
+  .profit-card {
+    position: fixed;
+    top: 32%;
+    right: 120px;
+    z-index: 20;
+    background: rgba(20,10,50,0.55);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 14px 22px;
+    backdrop-filter: blur(14px);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: fadeIn 1s 0.6s ease both;
+  }
+
+  .profit-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .profit-value {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-white);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .header { padding: 20px 24px; }
+    .nav { gap: 20px; }
+    .hero { padding: 24px 24px 48px; max-width: 100%; }
+    .headline { font-size: clamp(40px, 10vw, 64px); }
+    .robot-wrap { width: 70%; right: -40px; opacity: 0.5; }
+    .left-glow { display: none; }
+    .profit-card { right: 16px; top: 22%; padding: 10px 16px; }
+    .profit-value { font-size: 20px; }
+    .tags { flex-direction: row; flex-wrap: wrap; }
+  }
+
+  @media (max-width: 600px) {
+    .nav { display: none; }
+    .header { padding: 16px 20px; }
+    .hero { padding: 16px 20px 40px; }
+    .headline { font-size: 42px; }
+    .stats-row { flex-wrap: wrap; gap: 20px; }
+    .stat + .stat, .brand-block { border-left: none; padding-left: 0; }
+    .stat { padding-right: 0; }
+    .robot-wrap { width: 90%; right: -20px; opacity: 0.35; }
+    .profit-card { display: none; }
+    .lang-btn { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BACKGROUND SCENE -->
+<div class="scene"></div>
+
+<!-- Left decorative panel -->
+<div class="left-glow">
+  <div class="left-glow-inner"></div>
+</div>
+
+<!-- Robot silhouette (gradient fallback; replace src with actual robot image if available) -->
+<div class="robot-wrap">
+  <div class="robot-fallback"></div>
+</div>
+
+<!-- Profit card floating -->
+<div class="profit-card">
+  <span class="profit-label">Profit</span>
+  <span class="profit-value">68.5%</span>
+</div>
+
+<!-- PAGE LAYOUT -->
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <!-- Left nav -->
+    <nav class="nav">
+      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="#">Service</a>
+      <a class="nav-link" href="#">Feature <span class="arrow">⇒</span></a>
+      <a class="nav-link" href="#">Contact</a>
+    </nav>
+
+    <!-- Logo center -->
+    <div class="logo">NEXVISI</div>
+
+    <!-- Right controls -->
+    <div class="header-right">
+      <button class="lang-btn">
+        EN <span class="chevron">▾</span>
+      </button>
+      <a class="contact-btn" href="#">
+        Contact US
+        <span class="icon">💬</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <!-- Insight tags -->
+    <div class="tags">
+      <span class="tag">Insight Beyond</span>
+      <span class="tag">Intelligence</span>
+      <span class="tag">Secure AI</span>
+    </div>
+
+    <!-- Main headline -->
+    <h1 class="headline">
+      Innovate<br>Without Limits
+    </h1>
+
+    <!-- CTA buttons -->
+    <div class="cta-row">
+      <a class="btn-primary" href="#">
+        Get Started <span class="arrow-icon">↗</span>
+      </a>
+      <button class="btn-play">
+        <div class="play-triangle"></div>
+      </button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-number">320M+</div>
+        <div class="stat-label">Business</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number">590K+</div>
+        <div class="stat-label">Happy Client</div>
+      </div>
+
+      <div class="brand-block">
+        <div class="brand-title">BRAND'S DIGITAL<br>IDENTITY</div>
+        <div class="brand-explore">
+          Explore more
+          <span class="explore-circle">→</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>
