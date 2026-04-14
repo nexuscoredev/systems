@@ -3,102 +3,74 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "surface": "#131313",
-        "on-surface": "#e4e2e1",
-        "on-surface-variant": "#c1c6d5",
-        "surface-container": "#1f2020",
-        "surface-container-low": "#1b1c1c",
-        "outline-variant": "#414753",
-        "primary": "#c6c6c6",
-        "primary-fixed-dim": "#c6c6c6",
-        "tertiary": "#c8c6c5",
-        "tertiary-container": "#929090",
-        "primary-container": "#919191",
-      },
-      fontFamily: {
-        headline: ["Inter"],
-        body: ["Inter"],
-      }
-    }
-  }
-};
-</script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  .text-glow { text-shadow: 0 0 30px rgba(198,198,198,0.25); }
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
-  }
-  .animate-float { animation: float 6s ease-in-out infinite; }
 </style>
 </head>
-<body class="bg-surface text-on-surface font-body" style="font-family: Inter, sans-serif; min-height: 100vh;">
+<body style="font-family: Inter, sans-serif; min-height: 100vh; background: #131313;">
 
-<main style="position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; overflow: hidden; padding-bottom: 5rem; background: #131313;">
+<main style="position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; background: #131313;">
+
+  <!-- Background image -->
+  <div style="position:absolute;inset:0;z-index:0;pointer-events:none;">
+    <div style="position:absolute;inset:0;background-image:url('img/iconelogo.png');background-size:cover;background-position:center;opacity:0.45;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top, #131313 0%, rgba(19,19,19,0.4) 50%, rgba(19,19,19,0.2) 100%);"></div>
+  </div>
 
   <!-- Ambient glows -->
-  <div style="position:absolute;top:-10%;left:-10%;width:40%;height:40%;background:rgba(145,145,145,0.12);filter:blur(120px);border-radius:9999px;pointer-events:none;"></div>
-  <div style="position:absolute;bottom:-10%;right:-10%;width:30%;height:30%;background:rgba(146,144,144,0.07);filter:blur(100px);border-radius:9999px;pointer-events:none;"></div>
-  <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:rgba(198,198,198,0.06);filter:blur(150px);border-radius:9999px;pointer-events:none;"></div>
-
-  <!-- Gradient overlay bottom -->
-  <div style="position:absolute;inset:0;background:linear-gradient(to top, #131313 0%, transparent 60%);pointer-events:none;z-index:1;"></div>
+  <div style="position:absolute;top:-10%;left:-10%;width:40%;height:40%;background:rgba(145,145,145,0.12);filter:blur(120px);border-radius:9999px;pointer-events:none;z-index:1;"></div>
+  <div style="position:absolute;bottom:-10%;right:-10%;width:30%;height:30%;background:rgba(146,144,144,0.07);filter:blur(100px);border-radius:9999px;pointer-events:none;z-index:1;"></div>
+  <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:rgba(198,198,198,0.06);filter:blur(150px);border-radius:9999px;pointer-events:none;z-index:1;"></div>
 
   <!-- Content -->
-  <div style="position:relative;z-index:10;width:100%;max-width:900px;margin:0 auto;padding:0 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem;">
+  <div style="position:relative;z-index:10;width:100%;max-width:900px;margin:0 auto;padding:0 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.75rem;">
 
-    <!-- NEXUS logo -->
+    <!-- NEXUS — fino e elegante -->
     <div>
       <h2 style="
-        font-size: clamp(3rem, 10vw, 6.5rem);
-        font-weight: 900;
-        letter-spacing: 0.25em;
+        font-family: Inter, sans-serif;
+        font-size: clamp(5rem, 18vw, 11rem);
+        font-weight: 200;
+        letter-spacing: 0.45em;
         text-transform: uppercase;
-        background: linear-gradient(180deg, #ffffff 0%, #bdbdbd 50%, #4f4f4f 100%);
+        background: linear-gradient(180deg, #ffffff 0%, #d0d0d0 40%, #6a6a6a 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         line-height: 1;
         user-select: none;
-        text-shadow: none;
+        padding-right: 0.45em;
       ">NEXUS</h2>
     </div>
 
     <!-- Eyebrows -->
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
-      <span style="padding:0.375rem 1rem;border-radius:9999px;border:1px solid rgba(65,71,83,0.4);background:rgba(27,28,28,0.5);color:#c6c6c6;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;backdrop-filter:blur(12px);">VISÃO</span>
-      <span style="padding:0.375rem 1rem;border-radius:9999px;border:1px solid rgba(65,71,83,0.4);background:rgba(27,28,28,0.5);color:#c6c6c6;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;backdrop-filter:blur(12px);">INTELIGÊNCIA</span>
-      <span style="padding:0.375rem 1rem;border-radius:9999px;border:1px solid rgba(65,71,83,0.4);background:rgba(27,28,28,0.5);color:#c8c6c5;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;backdrop-filter:blur(12px);">IA E AUTOMAÇÃO</span>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;">
+      <span style="padding:0.3rem 0.875rem;border-radius:9999px;border:1px solid rgba(65,71,83,0.4);background:rgba(27,28,28,0.5);color:#c6c6c6;font-size:0.6rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;backdrop-filter:blur(12px);">VISÃO</span>
+      <span style="padding:0.3rem 0.875rem;border-radius:9999px;border:1px solid rgba(65,71,83,0.4);background:rgba(27,28,28,0.5);color:#c6c6c6;font-size:0.6rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;backdrop-filter:blur(12px);">INTELIGÊNCIA</span>
+      <span style="padding:0.3rem 0.875rem;border-radius:9999px;border:1px solid rgba(65,71,83,0.4);background:rgba(27,28,28,0.5);color:#c8c6c5;font-size:0.6rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;backdrop-filter:blur(12px);">IA E AUTOMAÇÃO</span>
     </div>
 
     <!-- Headline -->
-    <div style="display:flex;flex-direction:column;gap:1rem;">
+    <div style="display:flex;flex-direction:column;gap:0.75rem;">
       <h1 style="
         font-family: Inter, sans-serif;
-        font-size: clamp(2rem, 5vw, 3.75rem);
-        font-weight: 700;
+        font-size: clamp(1.25rem, 3vw, 2.1rem);
+        font-weight: 600;
         color: #ffffff;
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-        text-shadow: 0 0 20px rgba(179,197,255,0.3);
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        text-shadow: 0 0 20px rgba(179,197,255,0.2);
       ">
-        Tecnologia <span style="font-style:italic;font-weight:300;font-size:0.75em;color:#c6c6c6;margin-left:0.25em;">Sob Medida</span>
+        Tecnologia <span style="font-style:italic;font-weight:200;font-size:0.75em;color:#c6c6c6;margin-left:0.2em;">Sob Medida</span>
       </h1>
       <p style="
-        font-size: clamp(0.9rem, 2vw, 1.05rem);
+        font-size: clamp(0.7rem, 1.4vw, 0.82rem);
         color: #c1c6d5;
+        font-weight: 300;
         line-height: 1.7;
-        max-width: 560px;
+        max-width: 480px;
         margin: 0 auto;
       ">
         Tecnologia personalizada que se adapta ao seu negócio <em>— e não o contrário</em>.
@@ -108,11 +80,11 @@ tailwind.config = {
     <!-- CTA -->
     <div>
       <button style="
-        padding: 0.875rem 2.25rem;
+        padding: 0.8rem 2rem;
         border-radius: 9999px;
         font-family: Inter, sans-serif;
-        font-weight: 700;
-        font-size: 0.7rem;
+        font-weight: 600;
+        font-size: 0.65rem;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 50%, #7f8c8d 100%);
@@ -131,7 +103,7 @@ tailwind.config = {
       onmouseup="this.style.transform='scale(1.02)'"
       >
         COMEÇAR AGORA
-        <span style="font-family:'Material Symbols Outlined';font-size:1rem;transition:transform 0.2s;">arrow_forward</span>
+        <span style="font-family:'Material Symbols Outlined';font-size:1rem;">arrow_forward</span>
       </button>
     </div>
 
