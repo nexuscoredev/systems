@@ -1,285 +1,166 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>NEXUS – Inovação Sem Limites</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#303030",
+                        "on-secondary-fixed": "#001946",
+                        "on-tertiary-container": "#2a2a2a",
+                        "surface-container": "#1f2020",
+                        "error-container": "#93000a",
+                        "surface-dim": "#131313",
+                        "surface-container-highest": "#353535",
+                        "secondary-container": "#2c457d",
+                        "outline-variant": "#414753",
+                        "on-primary-container": "#2a2a2a",
+                        "surface-container-low": "#1b1c1c",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e4e2e1",
+                        "tertiary-container": "#929090",
+                        "on-surface-variant": "#c1c6d5",
+                        "inverse-primary": "#5e5e5e",
+                        "on-primary-fixed-variant": "#474747",
+                        "surface-tint": "#c6c6c6",
+                        secondary: "#b1c5ff",
+                        "on-background": "#e4e2e1",
+                        "on-surface": "#e4e2e1",
+                        "on-secondary-container": "#9cb4f3",
+                        "tertiary-fixed": "#e4e2e1",
+                        "secondary-fixed": "#dae2ff",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        surface: "#131313",
+                        "primary-container": "#919191",
+                        background: "#131313",
+                        "on-secondary-fixed-variant": "#2c457d",
+                        "primary-fixed": "#e2e2e2",
+                        tertiary: "#c8c6c5",
+                        "surface-container-lowest": "#0e0e0e",
+                        error: "#ffb4ab",
+                        "on-secondary": "#122e65",
+                        "primary-fixed-dim": "#c6c6c6",
+                        outline: "#8b919f",
+                        "surface-variant": "#353535",
+                        "on-primary-fixed": "#1b1b1b",
+                        "secondary-fixed-dim": "#b1c5ff",
+                        "on-primary": "#303030",
+                        "inverse-on-surface": "#303030",
+                        "surface-container-high": "#2a2a2a",
+                        primary: "#c6c6c6",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed": "#1b1c1c"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    fontFamily: {
+                        headline: ["Inter"],
+                        body: ["Inter"],
+                        label: ["Inter"],
+                        display: "Inter"
+                    }
+                }
+            }
+        };
+    </script>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-:root{
-  --silver-light:#E8E8E8;
-  --silver-mid:#B8B8B8;
-  --silver-dark:#787878;
-  --silver-dim:#484848;
-  --bg:#0A0A0A;
-  --bg-mid:#111111;
-  --bg-card:rgba(255,255,255,0.035);
-  --border:rgba(255,255,255,0.08);
-  --border-hi:rgba(200,200,200,0.18);
-  --gold-acc:rgba(220,210,190,0.12);
-  --font-display:'Cormorant Garamond',serif;
-  --font-body:'Montserrat',sans-serif;
-}
-
-html,body{
-  width:100%;min-height:100vh;
-  background:var(--bg);
-  color:var(--silver-light);
-  font-family:var(--font-body);
-  overflow-x:hidden;
-}
-
-/* ── FUNDO ── */
-.bg{
-  position:fixed;inset:0;z-index:0;
-  background:
-    radial-gradient(ellipse 55% 50% at 68% 55%, rgba(80,80,80,0.10) 0%, transparent 70%),
-    radial-gradient(ellipse 30% 30% at 20% 75%, rgba(60,60,60,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 82% 15%, rgba(50,50,50,0.08) 0%, transparent 65%),
-    linear-gradient(160deg,#080808 0%,#0D0D0D 50%,#0A0A0A 100%);
-}
-
-/* Textura de ruído sutil */
-.bg::after{
-  content:'';position:absolute;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity:0.6;pointer-events:none;
-}
-
-/* Linha horizontal fina de luz */
-.bg::before{
-  content:'';position:absolute;
-  top:50%;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent 0%,rgba(180,180,180,0.06) 30%,rgba(200,200,200,0.10) 50%,rgba(180,180,180,0.06) 70%,transparent 100%);
-}
-
-/* ── PÁGINA ── */
-.page{position:relative;z-index:10;min-height:100vh;display:flex;flex-direction:column;}
-
-/* ── CABEÇALHO ── */
-header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:32px 64px;
-  border-bottom:1px solid var(--border);
-  animation:fadeDown .8s ease both;
-}
-
-nav{display:flex;align-items:center;gap:40px;}
-
-.nav-link{
-  font-family:var(--font-body);font-size:12px;font-weight:400;
-  letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--silver-dark);text-decoration:none;
-  display:flex;align-items:center;gap:6px;
-  transition:color .25s;position:relative;
-}
-.nav-link::after{
-  content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--silver-mid),transparent);
-  transform:scaleX(0);transition:transform .3s;
-}
-.nav-link:hover{color:var(--silver-light);}
-.nav-link:hover::after{transform:scaleX(1);}
-.nav-link .arr{font-size:10px;opacity:.5;}
-
-/* Logo */
-.logo-wrap{
-  display:flex;flex-direction:column;align-items:center;gap:0;
-}
-.logo-icon{
-  width:44px;height:44px;margin-bottom:4px;
-}
-.logo-text{
-  font-family:var(--font-body);font-size:13px;font-weight:600;
-  letter-spacing:0.28em;text-transform:uppercase;
-  background:linear-gradient(180deg,#E0E0E0 0%,#888 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-
-/* Direita do cabeçalho */
-.hdr-right{display:flex;align-items:center;gap:14px;}
-
-.lang-btn{
-  display:flex;align-items:center;gap:6px;
-  font-family:var(--font-body);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--silver-dark);
-  background:transparent;border:1px solid var(--border-hi);
-  border-radius:30px;padding:8px 18px;cursor:pointer;
-  transition:border-color .2s,color .2s;
-}
-.lang-btn:hover{border-color:rgba(200,200,200,0.35);color:var(--silver-light);}
-
-.contact-btn{
-  display:flex;align-items:center;gap:10px;
-  font-family:var(--font-body);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--bg);
-  background:linear-gradient(135deg,#D0D0D0 0%,#888 50%,#C0C0C0 100%);
-  border:none;border-radius:30px;padding:10px 24px;cursor:pointer;
-  box-shadow:0 2px 20px rgba(160,160,160,0.20);
-  transition:box-shadow .25s,transform .2s;
-  text-decoration:none;
-}
-.contact-btn:hover{box-shadow:0 4px 32px rgba(180,180,180,0.30);transform:translateY(-1px);}
-.contact-btn .icon-c{
-  width:16px;height:16px;border-radius:50%;
-  background:rgba(0,0,0,0.15);
-  display:flex;align-items:center;justify-content:center;font-size:9px;
-}
-
-/* ── HERO ── */
-.hero{
-  flex:1;display:flex;flex-direction:column;justify-content:center;
-  padding:48px 64px 80px;max-width:680px;
-}
-
-/* Etiquetas */
-.tags{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-bottom:32px;animation:fadeUp .7s .2s ease both;}
-.tag{
-  font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--silver-dark);
-  background:var(--bg-card);
-  border:1px solid var(--border-hi);
-  border-radius:20px;padding:5px 16px;
-}
-
-/* Título principal */
-h1{
-  font-family:var(--font-display);font-size:clamp(56px,7.5vw,96px);font-weight:300;
-  line-height:.95;letter-spacing:-0.01em;
-  color:var(--silver-light);
-  margin-bottom:40px;
-  animation:fadeUp .7s .3s ease both;
-  background:linear-gradient(160deg,#F0F0F0 0%,#A0A0A0 40%,#D8D8D8 60%,#909090 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-
-/* CTA */
-.cta-row{display:flex;align-items:center;gap:16px;margin-bottom:56px;animation:fadeUp .7s .4s ease both;}
-
-.btn-primary{
-  display:flex;align-items:center;gap:10px;
-  font-family:var(--font-body);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--bg);
-  background:linear-gradient(135deg,#D4D4D4 0%,#888 50%,#C8C8C8 100%);
-  border:none;border-radius:40px;padding:14px 32px;cursor:pointer;
-  box-shadow:0 2px 24px rgba(150,150,150,0.18);
-  transition:box-shadow .25s,transform .2s;text-decoration:none;
-}
-.btn-primary:hover{box-shadow:0 6px 36px rgba(180,180,180,0.28);transform:translateY(-2px);}
-.btn-primary .arr{font-size:12px;transform:rotate(-45deg);display:inline-block;transition:transform .2s;}
-.btn-primary:hover .arr{transform:rotate(-45deg) translate(2px,-2px);}
-
-.btn-play{width:50px;height:50px;border-radius:50%;background:transparent;border:1px solid var(--border-hi);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s,background .2s,transform .2s;}
-.btn-play:hover{border-color:rgba(200,200,200,0.35);background:rgba(255,255,255,0.05);transform:scale(1.06);}
-.play-tri{width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:12px solid var(--silver-dark);margin-left:3px;}
-
-/* Estatísticas */
-.stats-row{display:flex;align-items:center;animation:fadeUp .7s .5s ease both;}
-
-.stat{padding-right:40px;}
-.stat+.stat{padding-left:40px;border-left:1px solid var(--border-hi);}
-
-.stat-num{
-  font-family:var(--font-display);font-size:34px;font-weight:300;
-  line-height:1.1;letter-spacing:.02em;
-  background:linear-gradient(180deg,#E0E0E0 0%,#888 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.stat-lbl{font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-dim);margin-top:4px;}
-
-.brand-block{padding-left:40px;border-left:1px solid var(--border-hi);}
-.brand-title{font-size:9px;font-weight:600;letter-spacing:.20em;text-transform:uppercase;color:var(--silver-dim);line-height:1.6;margin-bottom:10px;}
-.explore{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-mid);cursor:pointer;transition:gap .2s,color .2s;}
-.explore:hover{gap:14px;color:var(--silver-light);}
-.explore-ring{width:22px;height:22px;border-radius:50%;border:1px solid var(--border-hi);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--silver-mid);}
-
-/* Cartão de lucro */
-.profit-card{position:fixed;top:32%;right:110px;z-index:20;background:rgba(14,14,14,0.70);border:1px solid var(--border-hi);border-radius:14px;padding:16px 24px;backdrop-filter:blur(18px);animation:fadeIn 1s .7s ease both;}
-.profit-lbl{font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-dim);}
-.profit-val{font-family:var(--font-display);font-size:28px;font-weight:300;background:linear-gradient(160deg,#E0E0E0 0%,#888 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:2px;}
-</style>
+        .glass-effect-only {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(179, 197, 255, 0.4);
+        }
+        .bg-mesh {
+            background-image: radial-gradient(at 0% 0%, rgba(0, 35, 102, 0.15) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(255, 181, 158, 0.05) 0px, transparent 50%);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
 </head>
-<body>
-
-<div class="bg"></div>
-<div class="vline"></div>
-
-<!-- Painel lateral decorativo -->
-<div class="side-panel">
-  <div class="side-inner"><div class="side-dot"></div></div>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- Hero Section -->
+<main class="relative min-h-screen flex items-end overflow-hidden bg-mesh pb-24 md:pb-32">
+<!-- Ambient Light Elements -->
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary-container/20 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-tertiary-container/10 blur-[100px] rounded-full"></div>
+<!-- Background 3D Visual -->
+<div class="absolute inset-0 z-0 opacity-40 md:opacity-60 overflow-hidden pointer-events-none">
+<div class="relative w-full h-full">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="abstract 3D render of floating dark metallic spheres and glowing blue light trails in a cinematic dark atmosphere" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_rVELrj7ZppfV77QtEhD01BLC8HuKmIIFGvWOoz8-5rj-BVa8Xihhe7_LfdKDul90JRanZqFDVe6glul6A3VW_P2TOx6L8_Xx6T70rt9DMDVcFkqkWAtwxKTDmAGXLMs0ZU8bkEen4VViqw67exeJAEuCtDgDANH1adIjz16oEd5Yyryl2GWF236KacrZiburKy2-xyo4bNyoSlArdj4yIIS9Q-1MNozhFw8bGl4AuCbzg8egdTp9yR-o3lTnSdob-VsiAfALneCN");'></div>
+<!-- Floating Glass Card 1 -->
+<div class="absolute top-1/4 right-10 md:right-32 glass-effect-only bg-surface-container-low/40 border border-white/10 p-6 rounded-xl shadow-2xl animate-float">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="">analytics</span>
 </div>
-
-<!-- Cartão de lucro -->
-<div class="profit-card">
-  <div class="profit-lbl">Lucro</div>
-  <div class="profit-val">68.5%</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter" style="">Performance</p>
+<h3 class="text-2xl font-bold text-white" style="">99.9%</h3>
 </div>
-
-<div class="page">
-
-  <!-- Cabeçalho -->
-  <header>
-    <nav>
-      <a class="nav-link" href="#">Início</a>
-      <a class="nav-link" href="#">Serviços</a>
-      <a class="nav-link" href="#">Funcionalidades <span class="arr">⇒</span></a>
-      <a class="nav-link" href="#">Contato</a>
-    </nav>
-
-    <!-- Logo -->
-    <div class="logo-wrap">
-      <!-- SVG igual -->
-      <svg class="logo-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- SVG original -->
-      </svg>
-      <span class="logo-text">NEXUS</span>
-    </div>
-
-    <div class="hdr-right">
-      <button class="lang-btn">PT-BR <span>▾</span></button>
-      <a class="contact-btn" href="#">
-        Fale conosco
-        <span class="icon-c">✉</span>
-      </a>
-    </div>
-  </header>
-
-  <!-- Seção principal -->
-  <section class="hero">
-    <div class="tags">
-      <span class="tag">Visão Além</span>
-      <span class="tag">Inteligência</span>
-      <span class="tag">IA Segura</span>
-    </div>
-
-    <h1>Inovação<br>Sem Limites</h1>
-
-    <div class="cta-row">
-      <a class="btn-primary" href="#">Começar Agora <span class="arr">↗</span></a>
-      <button class="btn-play"><div class="play-tri"></div></button>
-    </div>
-
-    <div class="stats-row">
-      <div class="stat">
-        <div class="stat-num">320M+</div>
-        <div class="stat-lbl">Empresas</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">590K+</div>
-        <div class="stat-lbl">Clientes Satisfeitos</div>
-      </div>
-      <div class="brand-block">
-        <div class="brand-title">Identidade Digital<br>da Marca</div>
-        <div class="explore">
-          Explore mais
-          <span class="explore-ring">→</span>
-        </div>
-      </div>
-    </div>
-  </section>
 </div>
-
-</body>
-</html>
+</div>
+<!-- Floating Glass Card 2 -->
+<div class="absolute bottom-1/3 left-10 md:left-24 glass-effect-only bg-surface-container-high/40 border border-white/10 p-8 rounded-2xl shadow-2xl animate-float" style="animation-delay: -3s;">
+<div class="space-y-4">
+<p class="text-[10px] font-bold text-tertiary uppercase tracking-widest" style="">Crescimento</p>
+<div class="flex items-end gap-2">
+<h3 class="text-4xl font-headline text-white" style="">+45%</h3>
+<span class="material-symbols-outlined text-tertiary mb-1" style="">trending_up</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[70%]"></div>
+</div>
+</div>
+</div>
+<!-- Subtle Radial Glow -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80"></div>
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[150px] rounded-full mix-blend-screen"></div>
+</div>
+</div>
+<!-- Bottom Anchored Content -->
+<div class="relative z-10 w-full max-w-[1920px] mx-auto px-6 md:px-12 flex flex-col items-center justify-end text-center">
+<div class="flex flex-col space-y-8 md:space-y-12 max-w-4xl">
+<!-- Eyebrows -->
+<div class="flex flex-wrap justify-center gap-3">
+<span class="px-4 py-1.5 rounded-full border border-outline-variant/30 bg-surface-container-low/50 text-primary text-[10px] font-bold uppercase tracking-widest backdrop-blur-md" style="">VISÃO ALÉM</span>
+<span class="px-4 py-1.5 rounded-full border border-outline-variant/30 bg-surface-container-low/50 text-primary text-[10px] font-bold uppercase tracking-widest backdrop-blur-md" style="">INTELIGÊNCIA</span>
+<span class="px-4 py-1.5 rounded-full border border-outline-variant/30 bg-surface-container-low/50 text-tertiary text-[10px] font-bold uppercase tracking-widest backdrop-blur-md" style="">IA SEGURA</span>
+</div>
+<!-- Headline & Subheadline -->
+<div class="space-y-6 md:space-y-8">
+<h1 class="font-headline text-white leading-[1.05] tracking-tight text-glow text-4xl md:text-7xl" style="">Tecnologia<br/>
+<span class="italic font-normal text-primary-fixed-dim" style="">Sob Medida</span></h1>
+<p class="font-body text-on-surface-variant max-w-2xl mx-auto leading-relaxed text-lg px-4" style="">Tecnologia personalizada que se adapta ao seu negócio <i>— e não o contrário</i>.</p>
+</div>
+<!-- CTA -->
+<div class="flex flex-wrap items-center justify-center gap-8 pt-4">
+<button class="px-12 py-5 rounded-full text-white font-label font-bold uppercase tracking-[0.15em] text-xs transition-all duration-500 active:scale-95 group flex items-center gap-2" style="background: linear-gradient(135deg, rgb(245, 247, 250) 0%, rgb(195, 207, 226) 50%, rgb(127, 140, 141) 100%); color: rgb(26, 26, 26); box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 30px -5px, rgba(255, 255, 255, 0.2) 0px 0px 20px;">
+                    COMEÇAR AGORA
+                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" style="">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>
