@@ -32,9 +32,10 @@
     <!-- NEXUS -->
     <h2 style="
       font-family:Inter,sans-serif;
-      font-size:clamp(3.2rem, 14vw, 7.92rem);
-      font-weight:500;
+      font-size:clamp(4.5rem,16vw,9.9rem);
+      font-weight:300;
       letter-spacing:0.18em;
+      padding-right:0.18em;
       text-transform:uppercase;
       background:linear-gradient(180deg,#ffffff 0%,#d0d0d0 40%,#6a6a6a 100%);
       -webkit-background-clip:text;
@@ -45,53 +46,12 @@
       display:inline-block;
     ">NEXUS</h2>
 
-<!-- Eyebrows / Tags -->
-<style>
-  .tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6rem;
-  }
-
-  .tag {
-    padding: 0.3rem 0.875rem;
-    border-radius: 9999px;
-    border: 1px solid rgba(65,71,83,0.4);
-    background: rgba(27,28,28,0.6);
-    color: #c6c6c6;
-    font-size: 0.6rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  /* MOBILE — versão bem mais compacta */
-@media (max-width: 768px) {
-  .tag {
-    font-size: 0.48rem;
-    padding: 0.18rem 0.55rem;
-    letter-spacing: 0.08em;
-  }
-
-  .tags-container {
-    gap: 0.4rem;
-  }
-}
-
-  @media (max-width: 480px) {
-  h2 {
-    font-size: 4.6rem !important;
-  }
-}
-</style>
-
-<div class="tags-container">
-  <span class="tag">VISÃO</span>
-  <span class="tag">INTELIGÊNCIA</span>
-  <span class="tag">IA E AUTOMAÇÃO</span>
-</div>
+    <!-- Eyebrows -->
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;">
+      <span style="padding:0.3rem 0.875rem;border-radius:9999px;border:1px solid rgba(65,71,83,0.4);background:rgba(27,28,28,0.6);color:#c6c6c6;font-size:0.6rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;">VISÃO</span>
+      <span style="padding:0.3rem 0.875rem;border-radius:9999px;border:1px solid rgba(65,71,83,0.4);background:rgba(27,28,28,0.6);color:#c6c6c6;font-size:0.6rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;">INTELIGÊNCIA</span>
+      <span style="padding:0.3rem 0.875rem;border-radius:9999px;border:1px solid rgba(65,71,83,0.4);background:rgba(27,28,28,0.6);color:#c8c6c5;font-size:0.6rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;">IA E AUTOMAÇÃO</span>
+    </div>
 
     <!-- Headline -->
     <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
@@ -120,34 +80,33 @@
     </div>
 
     <!-- CTA -->
-<a href="https://nexuscoredev.github.io/systems/home.html" style="
-  padding:0.8rem 2rem;
-  border-radius:9999px;
-  font-family:Inter,sans-serif;
-  font-weight:600;
-  font-size:0.65rem;
-  letter-spacing:0.15em;
-  text-transform:uppercase;
-  background:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 50%,#7f8c8d 100%);
-  color:#1a1a1a;
-  border:none;
-  cursor:pointer;
-  box-shadow:0 10px 30px -5px rgba(0,0,0,0.5);
-  display:inline-flex;
-  align-items:center;
-  gap:0.5rem;
-  text-decoration:none;
-  transition:transform 0.2s,opacity 0.2s;
-"
-onmouseover="this.style.opacity='0.9';this.style.transform='scale(1.02)'"
-onmouseout="this.style.opacity='1';this.style.transform='scale(1)'"
-onmousedown="this.style.transform='scale(0.97)'"
-onmouseup="this.style.transform='scale(1.02)'"
->
-  COMEÇAR AGORA
-  <span style="font-family:'Material Symbols Outlined';font-size:1rem;">arrow_forward</span>
-</a>
-    
+    <button style="
+      padding:0.8rem 2rem;
+      border-radius:9999px;
+      font-family:Inter,sans-serif;
+      font-weight:600;
+      font-size:0.65rem;
+      letter-spacing:0.15em;
+      text-transform:uppercase;
+      background:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 50%,#7f8c8d 100%);
+      color:#1a1a1a;
+      border:none;
+      cursor:pointer;
+      box-shadow:0 10px 30px -5px rgba(0,0,0,0.5);
+      display:inline-flex;
+      align-items:center;
+      gap:0.5rem;
+      transition:transform 0.2s,opacity 0.2s;
+    "
+    onmouseover="this.style.opacity='0.9';this.style.transform='scale(1.02)'"
+    onmouseout="this.style.opacity='1';this.style.transform='scale(1)'"
+    onmousedown="this.style.transform='scale(0.97)'"
+    onmouseup="this.style.transform='scale(1.02)'" onclick="location.href='home.html'"
+    >
+      COMEÇAR AGORA
+      <span style="font-family:'Material Symbols Outlined';font-size:1rem;">arrow_forward</span>
+    </button>
+
   </div>
 </main>
 </body>
