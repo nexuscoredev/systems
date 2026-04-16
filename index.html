@@ -45,12 +45,47 @@
       display:inline-block;
     ">NEXUS</h2>
 
-    <!-- Eyebrows -->
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;">
-      <span style="padding:0.3rem 0.875rem;border-radius:9999px;border:1px solid rgba(65,71,83,0.4);background:rgba(27,28,28,0.6);color:#c6c6c6;font-size: clamp(0.35rem, 3vw, 0.6rem);font-weight:500;letter-spacing:0.15em;text-transform:uppercase;">VISÃO</span>
-      <span style="padding:0.3rem 0.875rem;border-radius:9999px;border:1px solid rgba(65,71,83,0.4);background:rgba(27,28,28,0.6);color:#c6c6c6;font-size: clamp(0.35rem, 3vw, 0.6rem);font-weight:500;letter-spacing:0.15em;text-transform:uppercase;">INTELIGÊNCIA</span>
-      <span style="padding:0.3rem 0.875rem;border-radius:9999px;border:1px solid rgba(65,71,83,0.4);background:rgba(27,28,28,0.6);color:#c8c6c5;font-size: clamp(0.35rem, 3vw, 0.6rem);font-weight:500;letter-spacing:0.15em;text-transform:uppercase;">IA E AUTOMAÇÃO</span>
-    </div>
+<!-- Eyebrows / Tags -->
+<style>
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .tag {
+    padding: 0.3rem 0.875rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(65,71,83,0.4);
+    background: rgba(27,28,28,0.6);
+    color: #c6c6c6;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* MOBILE — versão bem mais compacta */
+  @media (max-width: 768px) {
+    .tag {
+      font-size: 0.35rem;
+      padding: 0.1rem 0.35rem;
+      letter-spacing: 0.05em;
+    }
+
+    .tags-container {
+      gap: 0.3rem;
+    }
+  }
+</style>
+
+<div class="tags-container">
+  <span class="tag">VISÃO</span>
+  <span class="tag">INTELIGÊNCIA</span>
+  <span class="tag">IA E AUTOMAÇÃO</span>
+</div>
 
     <!-- Headline -->
     <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
