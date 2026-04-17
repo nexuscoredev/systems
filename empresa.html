@@ -49,20 +49,10 @@
         .silver-gradient { background: linear-gradient(135deg, #E5E4E2 0%, #8A8D8F 100%); }
         .graphite-gradient { background: linear-gradient(135deg, #181818 0%, #111111 100%); }
     </style>
+<script src="components.js" defer></script>
 </head>
-<body class="bg-onyx-black text-on-surface">
-<nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/5">
-<div class="flex justify-between items-center px-12 py-5 max-w-[1920px] mx-auto">
-<div class="text-2xl font-normal tracking-[0.25em] text-white font-serif">NEXUS</div>
-<div class="hidden md:flex items-center gap-10">
-<a class="text-gray-400 hover:text-white transition-colors duration-300 font-medium text-xs tracking-[0.15em] uppercase" href="home.html">Início</a>
-<a class="text-gray-400 hover:text-white transition-colors duration-300 font-medium text-xs tracking-[0.15em] uppercase" href="servicos.html">Serviços</a>
-<a class="text-white relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full font-medium text-xs tracking-[0.15em] uppercase" href="empresa.html">Empresa</a>
-<a class="text-gray-400 hover:text-white transition-colors duration-300 font-medium text-xs tracking-[0.15em] uppercase" href="contato.html">Contato</a>
-</div>
-<button onclick="location.href='contato.html'" class="bg-premium-gradient text-black px-8 py-2.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase hover:shadow-[0_0_20px_rgba(229,229,229,0.4)] transition-all">Get Started</button>
-</div>
-</nav>
+<body class="bg-onyx-black text-on-surface" data-page="empresa">
+<div id="nexus-navbar"></div>
 <header class="relative min-h-screen flex flex-col md:flex-row overflow-hidden pt-24">
 <div class="w-full md:w-1/2 flex items-center bg-onyx-black px-12 md:px-24 py-16">
 <div class="relative z-20 max-w-xl">
@@ -160,17 +150,5 @@
 </div>
 </div>
 </section>
-<footer class="bg-onyx-black border-t border-white/5">
-<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-[1920px] mx-auto">
-<div class="text-xl font-serif tracking-widest text-polished-silver mb-8 md:mb-0" style="">NEXUS</div>
-<div class="flex flex-col md:flex-row items-center gap-12">
-<div class="flex gap-8">
-<a class="text-gray-600 hover:text-polished-silver transition-colors duration-300 font-medium text-sm tracking-wider" href="#" style="">Privacidade</a>
-<a class="text-gray-600 hover:text-polished-silver transition-colors duration-300 font-medium text-sm tracking-wider" href="#" style="">Termos</a>
-<a class="text-gray-600 hover:text-polished-silver transition-colors duration-300 font-medium text-sm tracking-wider" href="#" style="">Social</a>
-</div>
-<span class="text-gray-600 font-body text-sm" style="">© 2024 NEXUS Technology Systems. All rights reserved.</span>
-</div>
-</div>
-</footer>
+<div id="nexus-footer"></div>
 </body></html>

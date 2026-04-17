@@ -105,20 +105,10 @@
             filter: grayscale(100%) contrast(150%) brightness(110%);
         }
     </style>
+<script src="components.js" defer></script>
 </head>
-<body class="bg-surface text-on-surface font-body selection:bg-white selection:text-black">
-<nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/5">
-<div class="flex justify-between items-center px-12 py-5 max-w-[1920px] mx-auto">
-<div class="text-2xl font-normal tracking-[0.25em] text-white font-serif">NEXUS</div>
-<div class="hidden md:flex items-center gap-10">
-<a class="text-white relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full font-medium text-xs tracking-[0.15em] uppercase" href="home.html">Início</a>
-<a class="text-gray-400 hover:text-white transition-colors duration-300 font-medium text-xs tracking-[0.15em] uppercase" href="servicos.html">Serviços</a>
-<a class="text-gray-400 hover:text-white transition-colors duration-300 font-medium text-xs tracking-[0.15em] uppercase" href="empresa.html">Empresa</a>
-<a class="text-gray-400 hover:text-white transition-colors duration-300 font-medium text-xs tracking-[0.15em] uppercase" href="contato.html">Contato</a>
-</div>
-<button onclick="location.href='contato.html'" class="bg-premium-gradient text-black px-8 py-2.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase hover:shadow-[0_0_20px_rgba(229,229,229,0.4)] transition-all">Get Started</button>
-</div>
-</nav>
+<body class="bg-surface text-on-surface font-body selection:bg-white selection:text-black" data-page="home">
+<div id="nexus-navbar"></div>
 <main class="relative overflow-hidden">
 <section class="relative min-h-screen flex items-center pt-20">
 <div class="absolute inset-0 z-0">
@@ -258,17 +248,5 @@
 </div>
 </section>
 </main>
-<footer class="w-full py-12 border-t border-white/5 bg-black">
-<div class="flex flex-col md:flex-row justify-between items-center px-12 w-full max-w-7xl mx-auto gap-6">
-<div class="font-['Noto_Serif'] text-xl text-white" style="">NEXUS</div>
-<div class="flex gap-8">
-<a class="font-['Manrope'] text-sm text-gray-500 hover:text-white transition-colors" href="#" style="">Privacidade</a>
-<a class="font-['Manrope'] text-sm text-gray-500 hover:text-white transition-colors" href="#" style="">Termos</a>
-<a class="font-['Manrope'] text-sm text-gray-500 hover:text-white transition-colors" href="#" style="">Cookies</a>
-</div>
-<div class="font-['Manrope'] text-sm text-gray-500" style="">
-            © 2024 NEXUS Editorial. All rights reserved.
-        </div>
-</div>
-</footer>
+<div id="nexus-footer"></div>
 </body></html>

@@ -102,20 +102,10 @@
             text-shadow: 0 0 15px rgba(229, 229, 229, 0.3);
         }
     </style>
+<script src="components.js" defer></script>
 </head>
-<body class="bg-surface text-on-surface selection:bg-white/20 selection:text-white">
-<nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/5">
-<div class="flex justify-between items-center px-12 py-5 max-w-[1920px] mx-auto">
-<div class="text-2xl font-normal tracking-[0.25em] text-white font-serif">NEXUS</div>
-<div class="hidden md:flex items-center gap-10">
-<a class="text-gray-400 hover:text-white transition-colors duration-300 font-medium text-xs tracking-[0.15em] uppercase" href="home.html">Início</a>
-<a class="text-white relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full font-medium text-xs tracking-[0.15em] uppercase" href="servicos.html">Serviços</a>
-<a class="text-gray-400 hover:text-white transition-colors duration-300 font-medium text-xs tracking-[0.15em] uppercase" href="empresa.html">Empresa</a>
-<a class="text-gray-400 hover:text-white transition-colors duration-300 font-medium text-xs tracking-[0.15em] uppercase" href="contato.html">Contato</a>
-</div>
-<button onclick="location.href='contato.html'" class="bg-premium-gradient text-black px-8 py-2.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase hover:shadow-[0_0_20px_rgba(229,229,229,0.4)] transition-all">Get Started</button>
-</div>
-</nav>
+<body class="bg-surface text-on-surface selection:bg-white/20 selection:text-white" data-page="servicos">
+<div id="nexus-navbar"></div>
 <main class="pt-0">
 <section class="relative min-h-[870px] flex items-center px-12 py-24 overflow-hidden">
 <div class="absolute inset-0 z-0">
@@ -221,27 +211,5 @@
 </div>
 </section>
 </main>
-<footer class="w-full border-t border-white/5 bg-surface py-20">
-<div class="flex flex-col md:flex-row justify-between items-start px-12 w-full max-w-[1920px] mx-auto">
-<div class="mb-12 md:mb-0">
-<div class="text-3xl font-serif tracking-[0.3em] text-white mb-6" style="">NEXUS</div>
-<p class="text-gray-500 text-xs font-medium tracking-widest max-w-sm leading-relaxed mb-4" style="">Arquitetando o futuro através da curadoria tecnológica e excelência digital.</p>
-<p class="text-gray-600 text-[10px] font-medium tracking-wide" style="">© 2024 NEXUS Technology Systems. All rights reserved.</p>
-</div>
-<div class="flex gap-24">
-<div class="flex flex-col gap-5">
-<span class="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-4" style="">Plataforma</span>
-<a class="text-gray-500 hover:text-white transition-colors duration-300 text-xs tracking-wider" href="#" style="">Privacidade</a>
-<a class="text-gray-500 hover:text-white transition-colors duration-300 text-xs tracking-wider" href="#" style="">Termos</a>
-<a class="text-gray-500 hover:text-white transition-colors duration-300 text-xs tracking-wider" href="#" style="">Segurança</a>
-</div>
-<div class="flex flex-col gap-5">
-<span class="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-4" style="">Conectar</span>
-<a class="text-gray-500 hover:text-white transition-colors duration-300 text-xs tracking-wider" href="#" style="">X / Twitter</a>
-<a class="text-gray-500 hover:text-white transition-colors duration-300 text-xs tracking-wider" href="#" style="">LinkedIn</a>
-<a class="text-gray-500 hover:text-white transition-colors duration-300 text-xs tracking-wider" href="#" style="">Instagram</a>
-</div>
-</div>
-</div>
-</footer>
+<div id="nexus-footer"></div>
 </body></html>
