@@ -1,265 +1,246 @@
-<!DOCTYPE html><html class="dark" lang="pt-BR"><head>
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>NEXUS | Projeto</title>
+<title>Projeto | NEXUS</title>
 <link rel="icon" type="image/png" href="img/favicon.png">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <script id="tailwind-config">
-      tailwind.config = {
+    tailwind.config = {
         darkMode: "class",
         theme: {
-          extend: {
-            "colors": {
-                    "inverse-surface": "#e2e2e2",
-                    "on-error": "#690005",
-                    "error-container": "#93000a",
-                    "on-tertiary": "#313030",
-                    "surface-bright": "#393939",
-                    "tertiary-fixed": "#e5e2e1",
-                    "on-surface-variant": "#c5c6ca",
-                    "surface-container-highest": "#353535",
-                    "error": "#ffb4ab",
-                    "secondary-fixed": "#e4e2e3",
-                    "on-surface": "#e2e2e2",
-                    "on-tertiary-container": "#4f4e4e",
-                    "surface-variant": "#353535",
-                    "on-error-container": "#ffdad6",
-                    "primary-container": "#c0c0c2",
-                    "tertiary": "#dfdcdb",
-                    "surface-container": "#1f1f1f",
-                    "on-primary-container": "#4d4e50",
-                    "surface-tint": "#c6c6c8",
-                    "inverse-primary": "#5d5e60",
-                    "secondary": "#c8c6c7",
-                    "on-primary-fixed-variant": "#454749",
-                    "primary-fixed": "#e3e2e4",
-                    "on-primary": "#2f3032",
-                    "background": "#131313",
-                    "primary-fixed-dim": "#c6c6c8",
-                    "outline-variant": "#44474a",
-                    "surface-container-low": "#1b1b1b",
-                    "on-secondary-fixed-variant": "#474648",
-                    "surface-container-high": "#2a2a2a",
-                    "tertiary-container": "#c2c0bf",
-                    "on-primary-fixed": "#1a1c1d",
-                    "surface": "#131313",
-                    "on-secondary-fixed": "#1b1b1c",
-                    "tertiary-fixed-dim": "#c8c6c5",
-                    "on-secondary-container": "#b6b4b5",
-                    "surface-dim": "#131313",
-                    "surface-container-lowest": "#0e0e0e",
-                    "outline": "#8f9194",
-                    "secondary-fixed-dim": "#c8c6c7",
-                    "on-tertiary-fixed": "#1c1b1b",
-                    "primary": "#dcdcde",
-                    "secondary-container": "#474648",
-                    "on-tertiary-fixed-variant": "#474646",
-                    "on-background": "#e2e2e2",
-                    "inverse-on-surface": "#303030",
-                    "on-secondary": "#303031"
-            },
-            "borderRadius": {
+            extend: {
+                "colors": {
+                    "onyx-black": "#000000",
+                    "graphite": "#111111",
+                    "graphite-light": "#181818",
+                    "polished-silver": "#C0C0C0",
+                    "silver-shimmer": "#E5E4E2",
+                    "outline-variant": "#333333",
+                    "surface": "#000000",
+                    "surface-container": "#111111",
+                    "surface-container-low": "#0D0D0D",
+                    "surface-container-lowest": "#000000",
+                    "surface-container-high": "#1a1a1a",
+                    "on-surface": "#C0C0C0",
+                    "on-surface-variant": "#999999",
+                    "primary": "#C0C0C0",
+                    "on-primary": "#000000",
+                    "secondary": "#181818"
+                },
+                "borderRadius": {
                     "DEFAULT": "0.125rem",
                     "lg": "0.25rem",
                     "xl": "0.5rem",
+                    "2xl": "1rem",
                     "full": "0.75rem"
+                },
+                "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+                }
             },
-            "spacing": {
-                    "stack-lg": "48px",
-                    "stack-md": "24px",
-                    "gutter": "24px",
-                    "unit": "8px",
-                    "container-max": "1440px",
-                    "margin-mobile": "20px",
-                    "stack-xs": "4px",
-                    "margin-desktop": "64px",
-                    "stack-sm": "12px"
-            },
-            "fontFamily": {
-                    "h2-editorial": ["Noto Serif"],
-                    "body-ui": ["Manrope"],
-                    "label-caps": ["Manrope"],
-                    "h3-editorial": ["Noto Serif"],
-                    "label-ui": ["Manrope"],
-                    "h1-editorial": ["Noto Serif"]
-            },
-            "fontSize": {
-                    "h2-editorial": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
-                    "body-ui": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
-                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.12em", "fontWeight": "700"}],
-                    "h3-editorial": ["32px", {"lineHeight": "1.3", "letterSpacing": "0em", "fontWeight": "400"}],
-                    "label-ui": ["14px", {"lineHeight": "1", "letterSpacing": "0em", "fontWeight": "500"}],
-                    "h1-editorial": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}]
-            }
-          },
         },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            line-height: 1;
-        }
-        .silver-gradient-text {
-            background: linear-gradient(135deg, #FFFFFF 0%, #C0C0C2 50%, #8F9194 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .glass-panel {
-            background: rgba(26, 26, 27, 0.8);
-            backdrop-filter: blur(32px);
-            border: 0.5px solid rgba(192, 194, 194, 0.3);
-        }
-        .metallic-button {
-            background: linear-gradient(135deg, #e3e2e4 0%, #c6c6c8 100%);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .metallic-button:hover {
-            filter: brightness(1.1);
-            box-shadow: 0 0 20px rgba(192, 192, 194, 0.4);
-        }
-    </style>
+    }
+</script>
+<style type="text/tailwindcss">
+    body { font-family: 'Manrope', sans-serif; background-color: #000000; color: #C0C0C0; }
+    .font-serif { font-family: 'Noto Serif', serif; }
+    .glass-nav { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(20px); }
+    .silver-gradient { background: linear-gradient(135deg, #E5E4E2 0%, #8A8D8F 100%); }
+    .silver-gradient-text {
+        background: linear-gradient(135deg, #FFFFFF 0%, #C0C0C0 50%, #8F9194 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .glass-panel {
+        background: rgba(17, 17, 17, 0.8);
+        backdrop-filter: blur(32px);
+        border: 0.5px solid rgba(192, 192, 192, 0.2);
+    }
+    .metallic-button {
+        background: linear-gradient(135deg, #E5E4E2 0%, #C0C0C0 100%);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .metallic-button:hover {
+        filter: brightness(1.1);
+        box-shadow: 0 0 20px rgba(192, 192, 192, 0.4);
+    }
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+    }
+</style>
+<script src="components.js" defer></script>
 </head>
-<body class="bg-background text-on-background font-body-ui selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-zinc-500/30 shadow-[0_1px_0_0_rgba(192,192,194,0.1)] flex justify-between items-center px-12 py-6">
-<div class="text-2xl font-bold italic tracking-tighter text-zinc-100">NEXUS</div>
-<div class="flex space-x-12">
-<a class="font-serif text-sm tracking-widest uppercase text-zinc-500 hover:text-zinc-100 transition-colors duration-300" href="#">Home</a>
-<a class="font-serif text-sm tracking-widest uppercase text-zinc-100 border-b border-zinc-100 pb-1 hover:text-zinc-100 transition-colors duration-300" href="#">Services</a>
-<a class="font-serif text-sm tracking-widest uppercase text-zinc-500 hover:text-zinc-100 transition-colors duration-300" href="#">Contact</a>
-</div>
-<button class="font-serif text-sm tracking-widest uppercase text-zinc-400 hover:text-zinc-100 transition-colors duration-300 scale-95 active:scale-100 transition-transform">Initialize System</button>
-</nav>
+<body class="bg-onyx-black text-on-surface" data-page="projeto">
+
+<!-- Universal Navbar -->
+<div id="nexus-navbar"></div>
+
 <main class="pt-32 pb-20 min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
-<!-- Background Monolith Visual -->
-<div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
-<img alt="" class="w-full h-full object-cover grayscale" data-alt="A sprawling industrial landscape at dusk, featuring monolithic concrete structures and sharp architectural lines. The lighting is cold and clinical, with deep shadows and high-contrast silver highlights. The atmosphere is quiet, powerful, and technologically advanced, echoing an industrial futurist aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0ujFfWRtuY05DP2OAO-GFmJr-22n8USpxXka91M4cy3H7hlnpz1dMd6fkabshCQrcAFRX0rt5ybqCFuf438-fRXkQ5dPoeeMqiuXYit1jPPjJfvYk3817seigBGyhW2T8FwEaoc9WgoJEl8RIY7suq5uGeiP3tCq_bRR2PkxpzQv6u-YCl6zCXBksP7wwz9rJ_AsBNmu7zfQBZTiBkpDa7kx_4edHas7bRhI8JtCYAgTEy-d3gYGhg2FtEDfd3UEXKbJRoyr5eoFffw">
-</div>
-<div class="container max-w-5xl px-margin-mobile md:px-margin-desktop z-10">
-<!-- Header Section -->
-<div class="text-center mb-stack-lg">
-<h1 class="font-h1-editorial text-h1-editorial silver-gradient-text mb-stack-xs">Conte sobre o seu projeto</h1>
-<p class="font-body-ui text-body-ui text-on-surface-variant max-w-2xl mx-auto uppercase tracking-widest text-[12px]">Vamos entender sua necessidade e desenvolver uma solução sob medida para o seu negócio</p>
-</div>
-<!-- Monolithic Form Card -->
-<div class="glass-panel p-stack-md md:p-stack-lg rounded-none relative overflow-hidden shadow-2xl">
-<!-- Decorative scan line -->
-<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary-container to-transparent opacity-50"></div>
-<form class="space-y-stack-lg">
-<!-- Verticals Selection -->
-<div class="space-y-stack-sm">
-<label class="font-label-caps text-label-caps text-zinc-500 block mb-stack-sm">TIPO DE PROJETO</label>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-stack-sm">
-<label class="relative group cursor-pointer">
-<input class="peer sr-only" type="checkbox">
-<div class="bg-surface-container border border-outline-variant p-stack-sm flex flex-col items-center justify-center space-y-unit peer-checked:border-primary peer-checked:bg-surface-container-high transition-all">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 0;">psychology</span>
-<span class="font-label-caps text-[10px] tracking-widest text-zinc-400 group-hover:text-zinc-100">SISTEMA SOB MEDIDA</span>
-</div>
-</label>
-<label class="relative group cursor-pointer">
-<input checked="" class="peer sr-only" type="checkbox">
-<div class="bg-surface-container border border-outline-variant p-stack-sm flex flex-col items-center justify-center space-y-unit peer-checked:border-primary peer-checked:bg-surface-container-high transition-all">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">precision_manufacturing</span>
-<span class="font-label-caps text-[10px] tracking-widest text-zinc-400 group-hover:text-zinc-100">AUTOMAÇÃO</span>
-</div>
-</label>
-<label class="relative group cursor-pointer">
-<input class="peer sr-only" type="checkbox">
-<div class="bg-surface-container border border-outline-variant p-stack-sm flex flex-col items-center justify-center space-y-unit peer-checked:border-primary peer-checked:bg-surface-container-high transition-all">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 0;">hub</span>
-<span class="font-label-caps text-[10px] tracking-widest text-zinc-400 group-hover:text-zinc-100">INTEGRAÇÃO DE SISTEMAS</span>
-</div>
-</label>
-<label class="relative group cursor-pointer">
-<input class="peer sr-only" type="checkbox">
-<div class="bg-surface-container border border-outline-variant p-stack-sm flex flex-col items-center justify-center space-y-unit peer-checked:border-primary peer-checked:bg-surface-container-high transition-all">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 0;">add</span>
-<span class="font-label-caps text-[10px] tracking-widest text-zinc-400 group-hover:text-zinc-100">OUTRO</span>
-</div>
-</label>
-</div>
-</div>
-<!-- Description Field -->
-<div class="space-y-stack-sm">
-<label class="font-label-caps text-label-caps text-zinc-500 block uppercase">Descreva sua necessidade</label>
-<textarea class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface font-body-ui text-body-ui min-h-[120px] placeholder:text-zinc-700 transition-all" placeholder="Explique o que você precisa, seus desafios atuais e o que gostaria de melhorar..."></textarea>
-</div>
-<!-- Budget and Timeline Grid -->
-<div class="grid md:grid-cols-2 gap-stack-lg">
-<div class="space-y-stack-sm">
-<label class="font-label-caps text-label-caps text-zinc-500 block uppercase">Orçamento estimado</label>
-<div class="relative">
-<span class="absolute left-0 bottom-2 text-zinc-600 font-label-ui">$</span>
-<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface font-body-ui text-body-ui pl-6 pb-2 placeholder:text-zinc-700 transition-all" placeholder="0.000.000" type="text">
-</div>
-</div>
-<div class="space-y-stack-sm">
-<label class="font-label-caps text-label-caps text-zinc-500 block uppercase">Prazo desejado</label>
-<select class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface font-body-ui text-body-ui pb-2 appearance-none cursor-pointer">
-<option class="bg-surface-container">Até 1 mês</option>
-<option class="bg-surface-container">1 a 3 meses</option>
-<option class="bg-surface-container">3 a 6 meses</option>
-<option class="bg-surface-container">Mais de 6 meses</option>
-</select>
-</div>
-</div>
-<!-- Imagery Inset -->
-<div class="grid grid-cols-3 gap-unit">
-<img alt="" class="h-32 w-full object-cover grayscale opacity-40 hover:opacity-100 transition-opacity duration-500" data-alt="High-detail 3D macro of a brushed silver metallic surface with precision-etched geometric lines. Soft industrial light catches the edges, creating sharp highlights and deep, clean shadows. A clinical, high-tech aesthetic dominated by monochrome tones." src="https://lh3.googleusercontent.com/aida/ADBb0uiJXYJRRcSxGHlZeDol9arE3CWbypKKaiAPqdUFJZrG7QS7tiSBatm2nGM8aiYoDM4NFhUHVeDDQ9N2u0kwwphtVG1i0McRQF7TxnkSt7e7zT_3WXmJrM2C35Nn-P72hNLXjSNS09dQPGAISHN26xC0emft7H4SodkqLcN2uQYxZXmW3AXlOtSIJXzGcxwlLOp1T6ya1nexxG6sxNpUAImzSAtnp-Q7-T8gJv6gvqYjZVGYujbFKN5QIou2">
-<img alt="" class="h-32 w-full object-cover grayscale opacity-40 hover:opacity-100 transition-opacity duration-500" data-alt="Extreme close-up of advanced circuit board architecture, glowing with faint white data streams. The surfaces are dark graphite and matte black, emphasizing a sophisticated, futuristic technology core. The lighting is moody and focused on the intricate textures." src="https://lh3.googleusercontent.com/aida/ADBb0uhFhuD2Ce2c7iGP2mqRlopQiVRFEVLsSdgbmUIPKEKb8fpYKjs3WcnPoRfUgTM58ww41EX-e86P-oYOwKg8tedTPgaJRL6eGRYz1zxg6lp_AO-5HvGDlULDzqqMzZtf9R0v0onLe6uSrl4A1S2k1cko8yNjlQhylRsYpn5DDfKGGDzG1K1WdmxAh7G0Axo65wdw2F7dxVgxSzqT7jsa_VKWoKqRMZ1oh7KaOAdv1pYYIbFsXC3amyQJBmg">
-<img alt="" class="h-32 w-full object-cover grayscale opacity-40 hover:opacity-100 transition-opacity duration-500" data-alt="Minimalist architectural detail showing a corner where glass and dark metal meet. The reflection shows a cold, industrial sky. The composition is sharp and geometric, focusing on the intersection of materials in a high-end futuristic building." src="https://lh3.googleusercontent.com/aida/ADBb0uhml6Oe-b3hOUbN3wsMhq14R2jOYVYUBbxAJPgSoWzZrBol09R8FtPq7mGqFZf3RuaOchdxQlUVeICCo7xUsLcs891h2QwGKj0WwCfLAM0sLMkWr6ALPE0CvNCIvJnKUUebyHdzDans20hRW2rrWCC14OA41EvuFeZ21X2i64glmIN8f-E_NDosCOao7VrRBbYMBlz398GNCcSKWv3AGkF-SohJ9doLmM8STGGugI7-iXd6axbSk4VRG9fs">
-</div>
-<!-- Submit Action -->
-<div class="pt-stack-md border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-stack-md">
-<div class="flex items-center space-x-unit">
-<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-<span class="font-label-caps text-[10px] tracking-[0.2em] text-zinc-500">SISTEMA OPERANTE / PRONTO PARA TRANSMISSÃO</span>
-</div>
-<button class="metallic-button px-stack-lg py-stack-sm font-label-caps text-on-primary tracking-[0.2em] uppercase w-full md:w-auto" type="submit">
-                            Enviar Solicitação
-                        </button>
-</div>
-</form>
-</div>
-<!-- Supporting Technical Detail Cards -->
-<div class="grid md:grid-cols-3 gap-gutter mt-stack-lg">
-<div class="border border-outline-variant p-stack-sm space-y-stack-sm bg-surface-container-lowest">
-<span class="material-symbols-outlined text-zinc-400" style="font-variation-settings: &quot;opsz&quot; 20;">security_update_good</span>
-<h4 class="font-label-caps text-zinc-100 text-[10px] tracking-widest">SEGURANÇA</h4>
-<p class="font-body-ui text-[12px] text-zinc-500">Seus dados protegidos com boas práticas modernas e confiáveis.</p>
-</div>
-<div class="border border-outline-variant p-stack-sm space-y-stack-sm bg-surface-container-lowest">
-<span class="material-symbols-outlined text-zinc-400" style="font-variation-settings: &quot;opsz&quot; 20;">monitoring</span>
-<h4 class="font-label-caps text-zinc-100 text-[10px] tracking-widest">EFICIÊNCIA</h4>
-<p class="font-body-ui text-[12px] text-zinc-500">Sistemas desenvolvidos para otimizar processos e reduzir retrabalho.</p>
-</div>
-<div class="border border-outline-variant p-stack-sm space-y-stack-sm bg-surface-container-lowest">
-<span class="material-symbols-outlined text-zinc-400" style="font-variation-settings: &quot;opsz&quot; 20;">deployed_code</span>
-<h4 class="font-label-caps text-zinc-100 text-[10px] tracking-widest">ESCALABILIDADE</h4>
-<p class="font-body-ui text-[12px] text-zinc-500">Soluções preparadas para crescer junto com o seu negócio.</p>
-</div>
-</div>
-</div>
+
+    <!-- Background Monolith Visual -->
+    <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+        <img
+            alt=""
+            class="w-full h-full object-cover grayscale"
+            src="https://lh3.googleusercontent.com/aida/ADBb0ujFfWRtuY05DP2OAO-GFmJr-22n8USpxXka91M4cy3H7hlnpz1dMd6fkabshCQrcAFRX0rt5ybqCFuf438-fRXkQ5dPoeeMqiuXYit1jPPjJfvYk3817seigBGyhW2T8FwEaoc9WgoJEl8RIY7suq5uGeiP3tCq_bRR2PkxpzQv6u-YCl6zCXBksP7wwz9rJ_AsBNmu7zfQBZTiBkpDa7kx_4edHas7bRhI8JtCYAgTEy-d3gYGhg2FtEDfd3UEXKbJRoyr5eoFffw"
+        >
+    </div>
+
+    <div class="container max-w-5xl px-6 md:px-24 z-10">
+
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+            <span class="font-label text-polished-silver font-bold tracking-[0.4em] uppercase text-xs mb-6 block">
+                Solicite um Projeto
+            </span>
+            <h1 class="font-headline text-silver-shimmer text-5xl md:text-[64px] leading-tight mb-4">
+                Conte sobre o seu projeto
+            </h1>
+            <p class="font-body text-on-surface-variant max-w-2xl mx-auto text-sm tracking-widest uppercase">
+                Vamos entender sua necessidade e desenvolver uma solução sob medida para o seu negócio
+            </p>
+        </div>
+
+        <!-- Monolithic Form Card -->
+        <div class="glass-panel p-6 md:p-12 rounded-xl relative overflow-hidden shadow-2xl">
+
+            <!-- Decorative scan line -->
+            <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-polished-silver to-transparent opacity-30"></div>
+
+            <form class="space-y-12">
+
+                <!-- Verticals Selection -->
+                <div class="space-y-3">
+                    <label class="font-label text-on-surface-variant text-xs tracking-[0.2em] uppercase block">
+                        Tipo de Projeto
+                    </label>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <label class="relative group cursor-pointer">
+                            <input class="peer sr-only" type="checkbox">
+                            <div class="bg-surface-container border border-outline-variant p-4 flex flex-col items-center justify-center gap-2 peer-checked:border-polished-silver peer-checked:bg-surface-container-high transition-all hover:border-polished-silver/30">
+                                <span class="material-symbols-outlined text-polished-silver">psychology</span>
+                                <span class="font-label text-[10px] tracking-widest text-on-surface-variant group-hover:text-on-surface text-center">Sistema sob medida</span>
+                            </div>
+                        </label>
+                        <label class="relative group cursor-pointer">
+                            <input class="peer sr-only" type="checkbox">
+                            <div class="bg-surface-container border border-outline-variant p-4 flex flex-col items-center justify-center gap-2 peer-checked:border-polished-silver peer-checked:bg-surface-container-high transition-all hover:border-polished-silver/30">
+                                <span class="material-symbols-outlined text-polished-silver">precision_manufacturing</span>
+                                <span class="font-label text-[10px] tracking-widest text-on-surface-variant group-hover:text-on-surface text-center">Automação</span>
+                            </div>
+                        </label>
+                        <label class="relative group cursor-pointer">
+                            <input class="peer sr-only" type="checkbox">
+                            <div class="bg-surface-container border border-outline-variant p-4 flex flex-col items-center justify-center gap-2 peer-checked:border-polished-silver peer-checked:bg-surface-container-high transition-all hover:border-polished-silver/30">
+                                <span class="material-symbols-outlined text-polished-silver">hub</span>
+                                <span class="font-label text-[10px] tracking-widest text-on-surface-variant group-hover:text-on-surface text-center">Integração de sistemas</span>
+                            </div>
+                        </label>
+                        <label class="relative group cursor-pointer">
+                            <input class="peer sr-only" type="checkbox">
+                            <div class="bg-surface-container border border-outline-variant p-4 flex flex-col items-center justify-center gap-2 peer-checked:border-polished-silver peer-checked:bg-surface-container-high transition-all hover:border-polished-silver/30">
+                                <span class="material-symbols-outlined text-polished-silver">add</span>
+                                <span class="font-label text-[10px] tracking-widest text-on-surface-variant group-hover:text-on-surface text-center">Outro</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Description Field -->
+                <div class="space-y-3">
+                    <label class="font-label text-on-surface-variant text-xs tracking-[0.2em] uppercase block">
+                        Descreva sua necessidade
+                    </label>
+                    <textarea
+                        class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:ring-0 focus:border-polished-silver text-on-surface font-body text-base min-h-[120px] placeholder:text-on-surface-variant/40 transition-all resize-none"
+                        placeholder="Explique o que você precisa, seus desafios atuais e o que gostaria de melhorar..."
+                    ></textarea>
+                </div>
+
+                <!-- Budget and Timeline Grid -->
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-3">
+                        <label class="font-label text-on-surface-variant text-xs tracking-[0.2em] uppercase block">
+                            Orçamento estimado
+                        </label>
+                        <div class="relative">
+                            <span class="absolute left-0 bottom-2 text-on-surface-variant font-label text-sm">R$</span>
+                            <input
+                                class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-polished-silver text-on-surface font-body text-base pl-8 pb-2 placeholder:text-on-surface-variant/40 transition-all"
+                                placeholder="0.000.000"
+                                type="text"
+                            >
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <label class="font-label text-on-surface-variant text-xs tracking-[0.2em] uppercase block">
+                            Prazo desejado
+                        </label>
+                        <select class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-polished-silver text-on-surface font-body text-base pb-2 appearance-none cursor-pointer">
+                            <option class="bg-surface-container">Até 1 mês</option>
+                            <option class="bg-surface-container">1 a 3 meses</option>
+                            <option class="bg-surface-container">3 a 6 meses</option>
+                            <option class="bg-surface-container">Mais de 6 meses</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Imagery Inset -->
+                <div class="grid grid-cols-3 gap-2">
+                    <img alt="" class="h-32 w-full object-cover grayscale opacity-30 hover:opacity-70 transition-opacity duration-500 rounded" src="https://lh3.googleusercontent.com/aida/ADBb0uiJXYJRRcSxGHlZeDol9arE3CWbypKKaiAPqdUFJZrG7QS7tiSBatm2nGM8aiYoDM4NFhUHVeDDQ9N2u0kwwphtVG1i0McRQF7TxnkSt7e7zT_3WXmJrM2C35Nn-P72hNLXjSNS09dQPGAISHN26xC0emft7H4SodkqLcN2uQYxZXmW3AXlOtSIJXzGcxwlLOp1T6ya1nexxG6sxNpUAImzSAtnp-Q7-T8gJv6gvqYjZVGYujbFKN5QIou2">
+                    <img alt="" class="h-32 w-full object-cover grayscale opacity-30 hover:opacity-70 transition-opacity duration-500 rounded" src="https://lh3.googleusercontent.com/aida/ADBb0uhFhuD2Ce2c7iGP2mqRlopQiVRFEVLsSdgbmUIPKEKb8fpYKjs3WcnPoRfUgTM58ww41EX-e86P-oYOwKg8tedTPgaJRL6eGRYz1zxg6lp_AO-5HvGDlULDzqqMzZtf9R0v0onLe6uSrl4A1S2k1cko8yNjlQhylRsYpn5DDfKGGDzG1K1WdmxAh7G0Axo65wdw2F7dxVgxSzqT7jsa_VKWoKqRMZ1oh7KaOAdv1pYYIbFsXC3amyQJBmg">
+                    <img alt="" class="h-32 w-full object-cover grayscale opacity-30 hover:opacity-70 transition-opacity duration-500 rounded" src="https://lh3.googleusercontent.com/aida/ADBb0uhml6Oe-b3hOUbN3wsMhq14R2jOYVYUBbxAJPgSoWzZrBol09R8FtPq7mGqFZf3RuaOchdxQlUVeICCo7xUsLcs891h2QwGKj0WwCfLAM0sLMkWr6ALPE0CvNCIvJnKUUebyHdzDans20hRW2rrWCC14OA41EvuFeZ21X2i64glmIN8f-E_NDosCOao7VrRBbYMBlz398GNCcSKWv3AGkF-SohJ9doLmM8STGGugI7-iXd6axbSk4VRG9fs">
+                </div>
+
+                <!-- Submit Action -->
+                <div class="pt-6 border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-polished-silver animate-pulse"></span>
+                        <span class="font-label text-[10px] tracking-[0.2em] text-on-surface-variant uppercase">
+                            Sistema operante — pronto para transmissão
+                        </span>
+                    </div>
+                    <button class="metallic-button px-10 py-3 font-label text-on-primary text-xs tracking-[0.2em] uppercase w-full md:w-auto" type="submit">
+                        Enviar Solicitação
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Supporting Technical Detail Cards -->
+        <div class="grid md:grid-cols-3 gap-4 mt-8">
+            <div class="bg-onyx-black border border-white/10 hover:border-polished-silver/30 transition-all p-6 space-y-3">
+                <span class="material-symbols-outlined text-polished-silver text-2xl">security_update_good</span>
+                <h4 class="font-label text-on-surface text-[10px] tracking-widest uppercase">Segurança</h4>
+                <p class="font-body text-xs text-on-surface-variant">Seus dados protegidos com boas práticas modernas e confiáveis.</p>
+            </div>
+            <div class="bg-onyx-black border border-white/10 hover:border-polished-silver/30 transition-all p-6 space-y-3">
+                <span class="material-symbols-outlined text-polished-silver text-2xl">monitoring</span>
+                <h4 class="font-label text-on-surface text-[10px] tracking-widest uppercase">Eficiência</h4>
+                <p class="font-body text-xs text-on-surface-variant">Sistemas desenvolvidos para otimizar processos e reduzir retrabalho.</p>
+            </div>
+            <div class="bg-onyx-black border border-white/10 hover:border-polished-silver/30 transition-all p-6 space-y-3">
+                <span class="material-symbols-outlined text-polished-silver text-2xl">deployed_code</span>
+                <h4 class="font-label text-on-surface text-[10px] tracking-widest uppercase">Escalabilidade</h4>
+                <p class="font-body text-xs text-on-surface-variant">Soluções preparadas para crescer junto com o seu negócio.</p>
+            </div>
+        </div>
+
+    </div>
 </main>
-<!-- Footer -->
-<footer class="w-full py-20 border-t border-zinc-900 bg-[#000000]">
-<div class="max-w-7xl mx-auto px-12 flex flex-col items-center space-y-8">
-<div class="text-lg font-black text-zinc-300">NEXUS</div>
-<div class="flex flex-wrap justify-center gap-x-12 gap-y-4">
-<a class="font-sans text-[10px] tracking-[0.3em] uppercase text-zinc-600 hover:text-zinc-100 underline underline-offset-8 transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Protocol</a>
-<a class="font-sans text-[10px] tracking-[0.3em] uppercase text-zinc-600 hover:text-zinc-100 underline underline-offset-8 transition-opacity opacity-80 hover:opacity-100" href="#">Terms of Service</a>
-<a class="font-sans text-[10px] tracking-[0.3em] uppercase text-zinc-600 hover:text-zinc-100 underline underline-offset-8 transition-opacity opacity-80 hover:opacity-100" href="#">Security Specs</a>
-<a class="font-sans text-[10px] tracking-[0.3em] uppercase text-zinc-600 hover:text-zinc-100 underline underline-offset-8 transition-opacity opacity-80 hover:opacity-100" href="#">System Status</a>
-</div>
-<div class="font-sans text-[10px] tracking-[0.3em] uppercase text-zinc-500">© 2024 NEXUS INDUSTRIAL FUTURISM. ALL RIGHTS RESERVED.</div>
-</div>
-</footer>
 
+<!-- Universal Footer -->
+<div id="nexus-footer"></div>
 
-</body></html>
+</body>
+</html>
