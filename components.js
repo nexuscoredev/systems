@@ -1,5 +1,5 @@
 /**
- * NEXUS — components.js
+ * Ligeirinho Bebidas — components.js
  * ---------------------------------------------------------------
  * Carrega navbar.html e footer.html da pasta components/.
  *
@@ -87,6 +87,6 @@
 
     setActiveLink();
   } catch (err) {
-    console.error('[NEXUS components.js]', err);
+    console.error('[Ligeirinho components.js]', err);
   }
 })();
