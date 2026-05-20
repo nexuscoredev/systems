@@ -2,6 +2,10 @@
 
 Site institucional da **Ligeirinho Bebidas** — marca de bebidas refrescantes e energéticas com foco em leveza, sabor e energia para o dia a dia.
 
+**Repositório:** https://github.com/nexuscoredev/ligeirinhobebidas
+
+> Migração: se o repositório ainda aparecer como `systems`, siga [MIGRACAO.md](./MIGRACAO.md) para renomear ou publicar no repo novo.
+
 ## Estrutura
 
 ```
